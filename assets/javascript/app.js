@@ -162,4 +162,15 @@ function initGoogleMap() {
             }, 1400);
         });
     }
+   
+    var marker = new google.maps.Marker({
+        position: map.getCenter(),
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 10
+        },
+        draggable: true,
+        map: map
+    });
+
 });
