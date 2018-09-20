@@ -162,4 +162,9 @@ function initGoogleMap() {
             }, 1400);
         });
     }
+
+    function myFunction() {
+        var elmnt = document.getElementById("content");
+        elmnt.scrollIntoView();
+    }
 });
