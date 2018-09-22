@@ -106,7 +106,7 @@ $(document).ready(function () {
         var myLatlng = new google.maps.LatLng(30.2672, -97.7431);
         var mapOptions = {
             center: myLatlng,
-            zoom: 10,
+            zoom: 12,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             draggable: true,
             scrollwheel: true,
