@@ -71,10 +71,9 @@
 	{
 		margin-right: 40px;
 	}
-	.city
+	.contact_info_content
 	{
-		width: calc((100% - 27px) / 2);
-		margin-bottom: 26px;
+		padding-right: 130px;
 	}
 	.footer_nav
 	{
@@ -142,7 +141,7 @@
 		width: 100%;
 		height: auto;
 		margin-top: 80px;
-		margin-bottom: 130px;
+		margin-bottom: 43px;
 		background: linear-gradient(to right, #487fee, #32fa95);
 	}
 	.home_search_content
@@ -160,6 +159,12 @@
 		border-right: none;
 		border-bottom: solid 1px #d1d1d1;
 	}
+	.sidebar_search_title
+	{
+		position: relative;
+		top: auto;
+		left: auto;
+	}
 	.search_form_button
 	{
 		position: absolute;
@@ -168,9 +173,18 @@
 		height: 40px;
 		width: calc(100% + 20px);
 	}
-	.testimonial_col:not(:last-child)
+	.search_form_button_2
 	{
-		margin-bottom: 60px;
+		height: 40px;
+		width: 100%;
+	}
+	.contact_form_container
+	{
+		margin-top: 80px;
+	}
+	.contact_name_col
+	{
+		margin-bottom: 17px;
 	}
 	.newsletter_form_container
 	{
@@ -230,14 +244,7 @@
 
 @media only screen and (max-width: 767px)
 {
-	.city
-	{
-		width: 100%;
-	}
-	.recent_slider_nav_container
-	{
-		display: none;
-	}
+	
 }
 
 /************
@@ -246,6 +253,26 @@
 
 @media only screen and (max-width: 575px)
 {
+	p
+	{
+		font-size: 13px;
+	}
+	.home
+	{
+		height: 250px;
+	}
+	.home_container
+	{
+		bottom: 90px;
+	}
+	.section_title
+	{
+		font-size: 24px;
+	}
+	.section_subtitle
+	{
+		font-size: 13px;
+	}
 	.logo
 	{
 		width: 70px;
@@ -277,29 +304,27 @@
 		font-size: 12px;
 		line-height: 52px;
 	}
-	.home_subtitle
+	.contact_button
 	{
 		font-size: 12px;
+	}
+	.contact_info_list li
+	{
+		font-size: 13px;
+	}
+	.contact_map
+	{
+		width: 100%;
+		height: 354px;
 	}
 	.home_title
 	{
 		font-size: 24px;
 	}
-	.home_price
-	{
-		font-size: 18px;
-	}
-	.search_form_button
+	.search_form_button,
+	.search_form_button_2
 	{
 		font-size: 12px;
-	}
-	.city_title
-	{
-		font-size: 24px;
-	}
-	.city_subtitle
-	{
-		font-size: 14px;
 	}
 	.newsletter_title
 	{
