@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<title>Rooted-Page1</title>
+    <title>Rooted Search Page</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Rooted Home Papge">
@@ -22,7 +22,6 @@
 </head>
  
 <body>
-    
     <!-- Small Screen Menu Button-->
     <div class="menu trans_500">
             <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -59,7 +58,7 @@
                                     <li class="active"><a href="index.html">Search Properties</a></li>
                                     <li><a href="about.html">About us</a></li>
                                     <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="signup.html">Log In/Sign Up</a></li>
+                                    <li><a href="login.html">Log In/Sign Up</a></li>
                                 </ul>
                             </nav>
                             <div class="phone_num ml-auto">
@@ -106,7 +105,7 @@
                                             </select>
                                         </div>
                                      </div>
-                                    <button class="search_form_button company_search_button ml-auto">search</button>
+                                    <button class="search_form_button company_search_button ml-auto" type="button" id="first" onclick="smoothScroll(document.getElementById('second'))">Search</button>
                                 </form>
                             </div>
                             <!-- Search Bar Option -->
@@ -116,25 +115,17 @@
                 </div>
             </div>
         </div><!--End of Company Search Div-->
-        
-        <!--Map-->
-        <div class="row row-results">
-            <!--Search Map-->
-            <div class="contact_map col-12">
-                <!-- Google Map -->
-                <div class="map">
-                    <div id="google_map" class="google_map">
-                        <div class="map_container">
-                            <div id="map"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div>
+
+        <br><br><br><br><br>
 
         <!--Home Search-->
         <div class="home_search">
             <div class="container">
+                    <div class="jumbotron criteria">
+                            <h1 class="display-4 criteria_text">Choose Your Criteria</h1>
+                            <br>
+                            <p class="lead"></p>
+                        </div>
                 <div class="row">
                     <div class="col">
                         <div class="home_search_container">
@@ -187,15 +178,30 @@
                                             </select>
                                         </div>
                                     </div>
-                                        <button class="search_form_button ml-auto">search</button>
+                                    <button class="search_form_button ml-auto" id="second">search</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div><!--End Of Home Search Div-->    
-        
+        </div><!--End Of Home Search Div-->
+            
+        <!--Map-->
+        <div class="row row-results">
+            <!--Search Map-->
+            <div class="contact_map col-12">
+                <!-- Google Map -->
+                <div class="map">
+                    <div id="google_map" class="google_map">
+                        <div class="map_container">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
         <!--Search Results-->
         <div class="return-results col-12 bg-secondary"></div>
          
