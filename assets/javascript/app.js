@@ -1,15 +1,49 @@
 $(document).ready(function () {
+    $('#company-input').on("change",function(){
 
+        var selectedValue=$('#company-input option:selected').val();
+        var selectedText=$('#company-input option:selected').text();
+        $('#company-input').on("change", function() {
+            var value = $(this).val();
+            var text = $(this).find('option:selected').text();
+            
+          });
+          var config = {
+            apiKey: "AIzaSyDW7VVTo0QIJkHrYXQX_ywKUBHc44AfXGs",
+            authDomain: "rooted-d62ff.firebaseapp.com",
+            databaseURL: "https://rooted-d62ff.firebaseio.com",
+            projectId: "rooted-d62ff",
+            storageBucket: "rooted-d62ff.appspot.com",
+            messagingSenderId: "95280005810"
+        };
+        firebase.initializeApp(config);
+    
+        var database = firebase.database();
+    
+    $(document).ready(function () {
+        $("#submit").click(function () {
+            let company = $("#company-input").val();
+    
+            console.log("click");
+    
+            let newCompany = {
+                company: $("#company-input").val()
+            };
+    
+            console.log(selectedValue);
+          
+          
+    });
+    
     // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDW7VVTo0QIJkHrYXQX_ywKUBHc44AfXGs",
-        authDomain: "rooted-d62ff.firebaseapp.com",
-        databaseURL: "https://rooted-d62ff.firebaseio.com",
-        projectId: "rooted-d62ff",
-        storageBucket: "rooted-d62ff.appspot.com",
-        messagingSenderId: "95280005810"
-    };
-    firebase.initializeApp(config);
+    
+
+        database.ref().push({
+            company: selectedValue
+        });
+
+        $("#company-input").val();
+
 
     "use strict";
 
@@ -187,5 +221,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var div22 = document.getElementById('stay22-script');
     div22.insertAdjacentHTML('afterend', '<iframe id="stay22-widget" width="' + settings22.width + '" height="' + settings22.height + '" src="' + 'https://www.stay22.com/embed/gm?' + params22 + '" frameborder="0"></iframe>');
 
-    
+
+    // Scroll Function 
+
+//   window.smoothScroll = function(target) {
+//     var scrollContainer = target;
+//     do { //find scroll container
+//         scrollContainer = scrollContainer.parentNode;
+//         if (!scrollContainer) return;
+//         scrollContainer.scrollTop += 1;
+//     } while (scrollContainer.scrollTop == 0);
+
+//     var targetY = 0;
+//     do { //find the top of target relatively to the container
+//         if (target == scrollContainer) break;
+//         targetY += target.offsetTop;
+//     } while (target = target.offsetParent);
+
+//     scroll = function(c, a, b, i) {
+//         i++; if (i > 30) return;
+//         c.scrollTop = a + (b - a) / 30 * i;
+//         setTimeout(function(){ scroll(c, a, b, i); }, 20);
+//     }
+//     // start scrolling
+//     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+// }
+
+
+}) 
+})
+
 });

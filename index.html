@@ -75,6 +75,8 @@
         </header>
         
         <!-- Company Search -->
+        
+        <div class="start_scroll"></div>
         <div class="home_search">
             <div class="container">
                 <div class="jumbotron">
@@ -86,27 +88,27 @@
                     <div class="col">
                         <div class="company_search_container">
                             <div class="home_search_content">
-                                <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start">
+                                <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start" id="company-input">
                                     <div class="search_form_content d-flex flex-row align-items-start justfy-content-start flex-wrap">
                                         <div>
-                                            <select class="search_form_select1">
-                                                <div class="company_search_box">
+                                            <select class="search_form_select1" >
+                                                <div class="company_search_box" >
                                                     <option disabled selected>Company</option>
-                                                    <option>Amazon</option>
-                                                    <option>Apple</option>
-                                                    <option>Bumble</option>
-                                                    <option>Dell</option>
-                                                    <option>Facebook</option>
-                                                    <option>Google</option>
-                                                    <option>Home Away</option>
-                                                    <option>IBM</option>
-                                                    <option>Indeed</option>
-                                                    <option>Intel</option>
+                                                    <option value="Amazon">Amazon</option>
+                                                    <option value="Apple">Apple</option>
+                                                    <option value="Bumble">Bumble</option>
+                                                    <option value="Dell">Dell</option>
+                                                    <option value="Facebook">Facebook</option>
+                                                    <option value="Google">Google</option>
+                                                    <option value="Home Away">Home Away</option>
+                                                    <option value="IBM">IBM</option>
+                                                    <option value="Indeed">Indeed</option>
+                                                    <option value="Intel">Intel</option>
                                                 </div>
                                             </select>
                                         </div>
                                      </div>
-                                    <button class="search_form_button company_search_button ml-auto">search</button>
+                                    <button class="search_form_button company_search_button ml-auto" id="submit">search</button>
                                 </form>
                             </div>
                             <!-- Search Bar Option -->
@@ -133,6 +135,8 @@
         </div>
 
         <!--Home Search-->
+        
+        <div class="scroll"></div>
         <div class="home_search">
             <div class="container">
                 <div class="row">
@@ -194,7 +198,9 @@
                     </div>
                 </div>
             </div>
-        </div><!--End Of Home Search Div-->    
+        </div>
+        <div class="second" id="second">Hi</div>
+    <!--End Of Home Search Div-->    
         
         <!--Search Results-->
         <div class="return-results col-12 bg-secondary"></div>
