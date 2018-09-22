@@ -1,14 +1,19 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900');
+ /* @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900');
 
 
 .jumbotron{
 	height: 500px; 
 	margin-left: auto; 
 	margin-right: auto; 
-	background: white; 
-}
+	background: grey;  
+} */
 
-.home_search_container
+/* .jumboText{
+	position: relative;
+	top: -50px; 
+} */
+
+/* .home_search_container
 {
 	position: absolute;
 	top: -350px;
@@ -74,5 +79,5 @@
 .form2{
 	position: relative; 
 	top: 200px; 
-}
- */
+} */
+ 
