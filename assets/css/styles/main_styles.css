@@ -2,9 +2,7 @@
 /* CSS Document */
 
 /******************************
-
 [Table of Contents]
-
 1. Fonts
 2. Body
 3. Header
@@ -12,7 +10,6 @@
 5. Super Container
 6. Property search
 6. Map
-
 ******************************/
 
 /***********
@@ -723,5 +720,3 @@ section
 	border: 10px solid linear-gradient(to right, #487fee, #32fa95);
     border-radius: 4px;
 }
-
-

@@ -14,10 +14,10 @@ $(document).ready(function () {
     "use strict";
 
     /* 
-      
+        
     1. Vars and Inits
-      
-     */
+        
+    */
 
     var header = $('.header');
     var menu = $('.menu');
@@ -42,9 +42,9 @@ $(document).ready(function () {
     initGoogleMap();
 
     /* 
-      
+        
     2. Set Header
-      
+        
     */
 
     function setHeader() {
@@ -140,20 +140,6 @@ $(document).ready(function () {
         });
     }
 
-    // $("#search_form_button ml-auto").on('click',function() {
-    //     $('html, body').animate({
-    //         'scrollBottom' : $("#form2").position().bottom
-    //     });
-    // });
-
-    // $(document).ready(function () {
-    //     $('div.click').click(function() {
-    //     $('html, body').animate({
-    //       scrollTop: $("div.form2").offset().top
-    //     }, -1000)
-    //   })
-     
-}); 
 
     function myFunction() {
         var elmnt = document.getElementById("content");
@@ -203,4 +189,3 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     
 });
-
