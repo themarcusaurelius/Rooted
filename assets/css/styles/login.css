@@ -2,17 +2,11 @@
 /* CSS Document */
 
 /******************************
-
 [Table of Contents]
-
 1. Fonts
 2. Body
 3. Header
 4. Small Screen Menu
-5. Super Container
-6. Property search
-6. Map
-
 ******************************/
 
 /***********
@@ -523,29 +517,8 @@ section
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
-* {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
-}
-
-body, html {
-	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
-}
-
 /*---------------------------------------------*/
-a {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-}
+
 
 a:focus {
 	outline: none !important;
@@ -562,7 +535,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Regular;
+	
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -629,14 +602,13 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Poppins-Regular;
+  
   font-size: 13px;
   line-height: 1.5;
   color: #999999;
 }
 
 .txt2 {
-  font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1.5;
   color: #666666;
@@ -653,7 +625,7 @@ iframe {
 
 .container-login100 {
   width: 100%;  
-  min-height: 100vh;
+  min-height: 130vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -704,7 +676,6 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Poppins-Bold;
   font-size: 24px;
   color: #333333;
   line-height: 1.2;
@@ -725,7 +696,6 @@ iframe {
 }
 
 .input100 {
-  font-family: Poppins-Medium;
   font-size: 15px;
   line-height: 1.5;
   color: #666666;
@@ -818,7 +788,6 @@ iframe {
 }
 
 .login100-form-btn {
-  font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;
   color: #fff;
@@ -913,7 +882,7 @@ iframe {
   right: 8px;
   pointer-events: none;
 
-  font-family: Poppins-Medium;
+  
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
