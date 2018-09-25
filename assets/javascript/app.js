@@ -266,11 +266,22 @@ $(document).ready(function () {
         var marker = new google.maps.Marker({
             position: map.getCenter(),
             icon: {
-                path: google.maps.SymbolPath.CIRCLE,
+                path: google.maps,
                 scale: 10
             },
             draggable: true,
             map: map
+
+        });
+        
+        markerData.forEach(function(data) {
+            var newmarker= new google.maps.Marker({
+                map:map,
+                position:{lat:data.lat, lng:data.lng},
+                title: data.name
+            });
+            jQuery("#selectlocation").append('<option value="'+[data.lat, data.lng,data.zoom].join('|')+'">'+data.name+'</option>');
+            
         });
 
         ///////////////Change Google Maps To Selected Company\\\\\\\\\\\\
