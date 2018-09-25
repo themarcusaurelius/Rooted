@@ -23,9 +23,6 @@ $(document).ready(function () {
             var text = $(this).find('option:selected').text();
         })
 
-
-
-
         $("#submit").click(function () {
             let company = $("#company-input").val();
 
@@ -48,6 +45,40 @@ $(document).ready(function () {
         $("#company-input").val().trim();
         console.log(selectedValue);
 
+
+        // Firebase for the housing criteria form 
+
+        $('#criteria-input').on("change", function () {
+            var selectedValue = $('#criteria-input option:selected').val();
+            var selectedText = $('#criteria-input option:selected').val();
+            $('#criteria-input').on("change", function () {
+                var value = $(this).val();
+                var text = $(this).find('option:selected').text();
+            })
+
+            $("#second").click(function () {
+                let criteria = $("#criteria-input").val();
+
+                console.log("click");
+
+                let newCriteria = {
+                    criteria: $("#criteria-input").val()
+                };
+
+                console.log(selectedValue);
+
+                database.ref("/Criteria").push({
+                    price: selectedValue,
+
+                    dateAdded: firebase.database.ServerValue.TIMESTAMP
+
+                });
+
+                $("#criteria-input").val().trim();
+                console.log(selectedValue);
+            })
+
+        })
 
         //HEADER and MENU FUNCTIONS
 
@@ -128,7 +159,7 @@ $(document).ready(function () {
 
             var mapOptions = {
                 center: myLatlng,
-                zoom: 12,
+                zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 draggable: true,
                 scrollwheel: true,
@@ -220,6 +251,17 @@ $(document).ready(function () {
             },
         ];
 
+        var value = $('#company-input option:selected').val();
+
+        for (i = 0; i < markerData.length; i++) {
+            if (value === markerData[i].name) {
+                var specLat = (markerData[i].lat)
+                var specLong = (markerData[i].lng)
+                var myNewLatlng = new google.maps.LatLng(specLat, specLong);
+                map.setCenter(myNewLatlng)
+            }
+        }
+
         function initialize() {
             map = new google.maps.Map(document.getElementsByClassName('map'), {
                 zoom: 3,
@@ -228,6 +270,7 @@ $(document).ready(function () {
                     lng: 10
                 }
             });
+
             markerData.forEach(function (data) {
                 var newmarker = new google.maps.Marker({
                     map: map,
@@ -256,8 +299,6 @@ $(document).ready(function () {
             });
         });
 
-
-
         function myFunction() {
             var elmnt = document.getElementById("content");
             elmnt.scrollIntoView();
@@ -273,15 +314,20 @@ $(document).ready(function () {
             map: map
 
         });
-        
-        markerData.forEach(function(data) {
-            var newmarker= new google.maps.Marker({
-                map:map,
-                position:{lat:data.lat, lng:data.lng},
+
+
+        markerData.forEach(function (data) {
+            var newmarker = new google.maps.Marker({
+                map: map,
+                position: {
+                    lat: data.lat,
+                    lng: data.lng
+                },
                 title: data.name
             });
-            jQuery("#selectlocation").append('<option value="'+[data.lat, data.lng,data.zoom].join('|')+'">'+data.name+'</option>');
-            
+            jQuery("search_form_select1").append('<option value="' + [data.lat, data.lng, data.zoom].join('|') + '">' + data.name + '</option>');
+
+
         });
 
         ///////////////Change Google Maps To Selected Company\\\\\\\\\\\\
@@ -315,7 +361,8 @@ $(document).ready(function () {
             scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
         }
 
-       
+
+
 
     });
 

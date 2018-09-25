@@ -21,7 +21,8 @@
 
 </head>
  
-<body scroll="no" style="overflow: hidden">
+<body>
+    <!-- scroll="no" style="overflow: hidden" -->
     <!-- Small Screen Menu Button-->
     <div class="menu trans_500">
             <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -130,12 +131,12 @@
                     <div class="col">
                         <div class="home_search_container">
                             <div class="home_search_content">
-                                <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start">
+                                <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start" id="criteria-input">
                                     <div class="search_form_content d-flex flex-row align-items-start justfy-content-start flex-wrap">
                                         <div>
-                                            <select class="search_form_select">
+                                            <select class="search_form_select" id="price-input">
                                                 <option disabled selected>Price</option>
-                                                <option>$1000-$1500</option>
+                                                <option value ="$1000-$1500">$1000-$1500</option>
                                                 <option>$1500-$2000</option>
                                                 <option>$2000-$2500</option>
                                                 <option>$2500-$3000</option>
@@ -145,35 +146,35 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select">
+                                            <select class="search_form_select" id="housing-input">
                                                 <option disabled selected>Housing Type</option>
-                                                <option>Apartment</option>
+                                                <option value ="Apartment">Apartment</option>
                                                 <option>House</option>
                                                 <option>Duplex</option>
                                                 <option>Condo</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select">
+                                            <select class="search_form_select" id="bedroom-input">
                                                 <option disabled selected>Bedrooms</option>
-                                                <option>1</option>
+                                                <option value = "1">1</option>
                                                 <option>2</option>
                                                 <option>3</option>
                                                 <option>4</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select">
+                                            <select class="search_form_select" id="bathroom-input">
                                                 <option disabled selected>Bathrooms</option>
-                                                <option>1</option>
+                                                <option value ="1">1</option>
                                                 <option>2</option>
                                                 <option>3</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select">
+                                            <select class="search_form_select" id="pet-input">
                                                 <option disabled selected>Pets</option>
-                                                <option>Yes</option>
+                                                <option value = "Yes">Yes</option>
                                                 <option>No</option>
                                             </select>
                                         </div>
