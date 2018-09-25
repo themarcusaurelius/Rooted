@@ -192,7 +192,6 @@ $(document).ready(function () {
             });
 
 
-<<<<<<< HEAD
         }
     }
 
@@ -247,11 +246,8 @@ $(document).ready(function () {
                 google.maps.event.trigger(map, "resize");
                 map.setCenter(myLatlng);
             }, 1400);
-=======
->>>>>>> andrea
         });
 
-<<<<<<< HEAD
 //Scroll Feature
 
 window.smoothScroll = function(target) {
@@ -276,64 +272,3 @@ window.smoothScroll = function(target) {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
-=======
-
-        document.addEventListener("DOMContentLoaded", function (event) {
-            // 1. Edit widget size
-            var settings22 = {
-                width: '100%', // set the width in px or %
-                height: '400px' // set the height in px or %
-            };
-
-            // 2. Fill out your config here and the rest should work
-            var s22obj = {
-                aid: 'affiliateid', // your affiliate id for tracking
-                address: 'Austin, Texas', // full street address or venue name + city
-                checkin: '2019-04-22', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
-                maincolor: '00549E', // your brand color in hex (without the #)
-                markerimage: "https://www.stay22.com/logo.png" // url of your logo or event image (in https)
-            };
-
-            // Leave this part intact
-            var params22 = '';
-            for (var key in s22obj) {
-                if (params22) {
-                    params22 += '&';
-                }
-                params22 += key + '=' + encodeURIComponent(s22obj[key]);
-            }
-            var div22 = document.getElementById('stay22-script');
-            div22.insertAdjacentHTML('afterend', '<iframe id="stay22-widget" width="' + settings22.width + '" height="' + settings22.height + '" src="' + 'https://www.stay22.com/embed/gm?' + params22 + '" frameborder="0"></iframe>');
-
-
-            // Scroll Function 
-
-            //   window.smoothScroll = function(target) {
-            //     var scrollContainer = target;
-            //     do { //find scroll container
-            //         scrollContainer = scrollContainer.parentNode;
-            //         if (!scrollContainer) return;
-            //         scrollContainer.scrollTop += 1;
-            //     } while (scrollContainer.scrollTop == 0);
-
-            //     var targetY = 0;
-            //     do { //find the top of target relatively to the container
-            //         if (target == scrollContainer) break;
-            //         targetY += target.offsetTop;
-            //     } while (target = target.offsetParent);
-
-            //     scroll = function(c, a, b, i) {
-            //         i++; if (i > 30) return;
-            //         c.scrollTop = a + (b - a) / 30 * i;
-            //         setTimeout(function(){ scroll(c, a, b, i); }, 20);
-            //     }
-            //     // start scrolling
-            //     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-            // }
-
-
-        })
-    })
-
-});
->>>>>>> andrea
