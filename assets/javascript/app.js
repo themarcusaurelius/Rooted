@@ -23,9 +23,6 @@ $(document).ready(function () {
             var text = $(this).find('option:selected').text();
         })
      
-    
-
-    
     $("#submit").click(function () {
         let company = $("#company-input").val();
 
@@ -250,3 +247,4 @@ $(document).on('change','search_form_select1',function() {
 });
 
 });
+
