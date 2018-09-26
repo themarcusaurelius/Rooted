@@ -38,7 +38,11 @@
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
-
+#resultInfo{
+	background-color: #32fa95;
+	color: #3f6fce;
+	width: 40%;
+}
 .header_content {
 	height: 101px;
 	-webkit-transition: all 200ms ease;

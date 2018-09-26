@@ -6,6 +6,7 @@ $(document).ready(function () {
         $('#company-input').on("change", function () {
             var value = $(this).val();
             var text = $(this).find('option:selected').text();
+            
         });
 
         var config = {
