@@ -54,11 +54,12 @@ $(document).ready(function () {
               .then(function(data){
                 console.log(data);
                 for (i = 0; i < data.results.length; i++){ 
-                 
+                
                   //console.log(data.results[i].images[1])
-                  $("#resultInfo").append(`
-                    <h3 class ="name" href=${data.results[i].rooms[0].link} >${data.results[i].name}</h3>
-                    <h4 class = "cost">${data.results[i].max_rates.per_night}</h4>
+                  $(".return-results").append(`
+                    <a href="${data.results[i].rooms[0].link}"><h3 class ="name">${data.results[i].name}</h3></a>
+                    
+                    <h4 class = "cost">$${data.results[i].max_rates.per_night}</h4>
                     <h5 class = link>${data.results[i].rooms[0].link}</h5>`)
                       console.log(data.results[i].name)
                       console.log(data.results[i].max_rates.per_night)

@@ -39,6 +39,7 @@
 	transition: all 200ms ease;
 }
 #resultInfo{
+	margin-top: 20px;
 	background-color: #32fa95;
 	color: #3f6fce;
 	width: 40%;
@@ -292,10 +293,12 @@
 	width: 400px;
 	height: 400px;
 	margin-left: 3%;
-	border: 10px solid linear-gradient(to right, #487fee, #32fa95);
+	
 	border-radius: 4px;
 	position: relative; 
 	bottom: 350px; 
+	
+	
 }
 
 
