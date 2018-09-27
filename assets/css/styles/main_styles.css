@@ -44,6 +44,14 @@ body
 	background: #FFFFFF;
 	color: #a5a5a5;
 }
+
+.user {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	background: #FFFFFF;
+	color: #a5a5a5;
+}
 div
 {
 	display: block;
@@ -57,7 +65,8 @@ ul
 	list-style: none;
 	margin-bottom: 0px;
 }
-p
+
+p,i
 {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
@@ -373,6 +382,7 @@ section
 	display: none;
 	cursor: pointer;
 }
+
 
 .hamburger i {
 	font-size: 18px;
