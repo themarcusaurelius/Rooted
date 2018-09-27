@@ -36,10 +36,12 @@ $(document).ready(function () {
             console.log(subject); 
             console.log(message); 
         })
-
+        var name = $("#name-input").val()
         var email = $("#email-input").val()
         var subject = $("#subject-input").val()
         var message = $("#message-input").val()
+
+        // message not saving to firebase, will console.log though 
 
         // Push to Firebase
         database.ref("/Contact").push({
@@ -50,11 +52,18 @@ $(document).ready(function () {
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         })
 
-        $("#name-input").val("")
-        $("#email-input").val("")
-        $("#subject-input").val("")
-        $("#message-input").val("")
+        // database.ref("/Contact").on("child_added", function(snapshot) {
+        //     // storing the snapshot.val() in a variable for convenience
+        //     var sv = snapshot.val();
+         
+        //     // Console.loging the last user's data
+        //     console.log(sv.name);
+        //     console.log(sv.wins);p
+
+        $("#name-input").val()
+        $("#email-input").val()
+        $("#subject-input").val()
+        $("#message-input").val()
 
     }) ; 
-
-}) ;
+    }) ; 

@@ -137,6 +137,8 @@ $(document).ready(function () {
                 }
             }
 
+            
+
             function openMenu() {
                 menu.addClass('active');
                 menuActive = true;
@@ -325,6 +327,7 @@ $(document).ready(function () {
                 jQuery("#selectlocation").append('<option value="' + [data.lat, data.lng, data.zoom].join('|') + '">' + data.name + '</option>');
 
             });
+
 
             ///////////////Change Google Maps To Selected Company\\\\\\\\\\\\
 
