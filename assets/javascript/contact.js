@@ -9,12 +9,11 @@ $(document).ready(function () {
         storageBucket: "rooted-d62ff.appspot.com",
         messagingSenderId: "95280005810"
     };
-    firebase.initializeApp(config);
-
+    
     ////////////////////////////////////////////////////////////////////////////////////
     var database = firebase.database();
-
-$(document).ready(function(){
+   
+    $(document).ready(function () {
 
         $("#send").click(function () {
             let name= $("#name-input").val();
@@ -24,7 +23,7 @@ $(document).ready(function(){
 
             console.log("click");
 
-            let newCompany = {
+            let newContact = {
             name: name= $("#name-input").val(),
             email: email= $("#email-input").val(),
             subject: subject= $("#subject-input").val(),
@@ -38,6 +37,9 @@ $(document).ready(function(){
             console.log(message); 
         })
 
+        var email = $("#email-input").val()
+        var subject = $("#subject-input").val()
+        var message = $("#message-input").val()
 
         // Push to Firebase
         database.ref("/Contact").push({
@@ -48,11 +50,11 @@ $(document).ready(function(){
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         })
 
-        $("#name-input").val().trim();
-        $("#email-input").val().trim();
-        $("#subject-input").val().trim();
-        $("#message-input").val().trim();
+        $("#name-input").val("")
+        $("#email-input").val("")
+        $("#subject-input").val("")
+        $("#message-input").val("")
 
-    }) 
+    }) ; 
 
-}); 
+}) ;

@@ -22,7 +22,6 @@
 </head>
  
 <body>
-    <!-- scroll="no" style="overflow: hidden" -->
     <!-- Small Screen Menu Button-->
     <div class="menu trans_500">
             <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -64,9 +63,10 @@
                             </nav>
                             <div class="phone_num ml-auto">
                                 <div class="phone_num_inner">
-                                    <img src="images/phone.png" alt=""><span>1-512-850-3002</span>
+                                    <img src="image" id="name-display" alt=""><span>User Name</span>
                                 </div>
                             </div>
+                            
                             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                                 <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start" id="company-input">
                                     <div class="search_form_content d-flex flex-row align-items-start justfy-content-start flex-wrap">
                                         <div>
-                                            <select class="search_form_select1">
+                                            <select class="search_form_select1" id="selectedlocation">
                                                 <div class="company_search_box">
                                                     <option disabled selected>Company</option>
                                                     <option value="Amazon">Amazon</option>
@@ -106,11 +106,9 @@
                                             </select>
                                         </div>
                                      </div>
-                                    <button class="search_form_button company_search_button ml-auto" type="button" id="first submit" onclick="smoothScroll(document.getElementById('second'))">Search</button>
+                                     <button class="search_form_button company_search_button ml-auto" type="button" id="first submit" onclick="smoothScroll(document.getElementById('second'))">Search</button>
                                 </form>
                             </div>
-                            <!-- Search Bar Option -->
-                            <!-- <input class="form-control" type="text" placeholder="Search" aria-label="Search"> -->
                         </div>
                     </div>
                 </div>
@@ -135,47 +133,49 @@
                                     <div class="search_form_content d-flex flex-row align-items-start justfy-content-start flex-wrap">
                                         <div>
                                             <select class="search_form_select" id="price-input">
-                                                <option disabled selected>Price</option>
-                                                <option value ="$1000-$1500">$1000-$1500</option>
-                                                <option>$1500-$2000</option>
-                                                <option>$2000-$2500</option>
-                                                <option>$2500-$3000</option>
-                                                <option>$3000-$3500</option>
-                                                <option>$3500-$4000</option>
-                                                <option>$4000+</option>
+                                                <option disabled selected>Max Price</option>
+                                                <option value="$200">$200</option>
+                                                <option value="$300">$300</option>
+                                                <option value="$400">$400</option>
+                                                <option value="$500">$500</option>
+                                                <option value="$600">$600</option>
+                                                <option value="$700">$700</option>
+                                                <option value="$800">$800+</option>
                                             </select>
                                         </div>
                                         <div>
                                             <select class="search_form_select" id="housing-input">
                                                 <option disabled selected>Housing Type</option>
-                                                <option value ="Apartment">Apartment</option>
+                                                <option text="Apartment">Apartment</option>
                                                 <option>House</option>
                                                 <option>Duplex</option>
                                                 <option>Condo</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select" id="bedroom-input">
+                                            <select class="search_form_select">
                                                 <option disabled selected>Bedrooms</option>
-                                                <option value = "1">1</option>
+                                                <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
                                                 <option>4</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select" id="bathroom-input">
+                                            <select class="search_form_select">
                                                 <option disabled selected>Bathrooms</option>
-                                                <option value ="1">1</option>
+                                                <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select" id=>
-                                                <option disabled selected>Pets</option>
-                                                <option value = "Yes">Yes</option>
-                                                <option>No</option>
+                                            <select class="search_form_select">
+                                                <option disabled selected>Nights</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4+</option>
                                             </select>
                                         </div>
                                     </div>
@@ -208,8 +208,8 @@
          
     </div> <!--Super Container Div Ending-->
 
-<script>
- window.smoothScroll = function (target) {
+    <script>
+         window.smoothScroll = function (target) {
             var scrollContainer = target;
             do { //find scroll container
                 scrollContainer = scrollContainer.parentNode;
@@ -233,8 +233,8 @@
             }
             // start scrolling
             scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-        }</script>
-
+        } 
+    </script>
 
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
