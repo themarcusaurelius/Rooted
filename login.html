@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Rooted Log In Page</title>
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Rooted Login Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="assets/css/styles/reset.css">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"crossorigin="anonymous">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles/login.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles/login_responsive.css">
+
+	<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+	
+</head>
+<body>
+	<!-- Small Screen Menu Button-->
+    <div class="menu trans_500">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="menu_close_container"><div class="menu_close"></div></div>
+                <div class="logo menu_logo">
+                    <a href="#">
+                        <div class="logo_container d-flex flex-row align-items-start justify-content-start">
+                            <div class="logo_image"><div><img src="" alt=""></div></div>
+                        </div>
+                    </a>
+                </div>
+                <ul>
+                    <li class="menu_item"><a href="index.html">Search Rentals</a></li>
+                    <li class="menu_item"><a href="about.html">About Us</a></li>
+                    <li class="menu_item"><a href="contact.html">Contact</a></li>
+                    <li class="menu_item"><a href="signup.html">Sign Up/Log In</a></li>
+                </ul>
+            </div>
+			<div class="menu_phone"><span>call us: </span>1-512-850-3002</div>
+    </div>
+	
+	<!--Header-->
+	<header class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<div class="logo">
+								<a href="#"><img src="" alt="">LOGO WILL GO HERE</a>
+							</div>
+							<nav class="main_nav">
+								<ul>
+									<li><a href="index.html">Search Properties</a></li>
+									<li><a href="about.html">About us</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li class="active"><a href="login.html">Log In/Sign Up</a></li>
+								</ul>
+							</nav>
+							<div class="phone_num ml-auto">
+								<div class="phone_num_inner" id="name-display">
+									<i class="fa fa-user"><span class="user">User</span></i>
+								</div>
+							</div>
+							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</header>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img-01.png" alt="IMG">
+				</div>
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						Member Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" id="inputEmail" type="text"  name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" id="inputPassword" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="buttonLogin">
+							Login
+						</button>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="buttonCreate">
+							Create Account
+						</button>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="buttonLogOut">
+							Log Out
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>	
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<script src="assets/javascript/login.js"></script>
+	<script src="assets/javascript/loginJS.js"></script>
+	
+
+</body>
+</html>
