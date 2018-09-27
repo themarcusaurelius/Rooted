@@ -20,11 +20,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/styles/login_responsive.css">
 
 	<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+	
 </head>
 <body>
-	
-	
-		<!-- Small Screen Menu Button-->
+	<!-- Small Screen Menu Button-->
     <div class="menu trans_500">
             <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
                 <div class="menu_close_container"><div class="menu_close"></div></div>
@@ -63,11 +62,10 @@
 								</ul>
 							</nav>
 							<div class="phone_num ml-auto">
-								<div class="phone_num_inner">
-									<img src="images/phone.png" alt=""><span>1-512-850-3002</span>
+								<div class="phone_num_inner" id="name-display">
+									<i class="fa fa-user"><span class="user">User</span></i>
 								</div>
 							</div>
-							<div class="user"><h5>TEST</h5></div>
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 						</div>
 					</div>
@@ -87,7 +85,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" id="inputEmail" type="text"  name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -95,7 +93,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" id="inputPassword" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -103,8 +101,20 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" id="buttonLogin">
 							Login
+						</button>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="buttonCreate">
+							Create Account
+						</button>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="buttonLogOut">
+							Log Out
 						</button>
 					</div>
 
@@ -117,12 +127,6 @@
 						</a>
 					</div>
 
-					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>
@@ -141,6 +145,8 @@
 		})
 	</script>
 	<script src="assets/javascript/login.js"></script>
+	<script src="assets/javascript/loginJS.js"></script>
+	
 
 </body>
 </html>
