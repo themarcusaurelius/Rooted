@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link rel="stylesheet" href="assets/css/styles/reset.css">
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"crossorigin="anonymous">
 	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
@@ -61,11 +60,11 @@
 									<li class="active"><a href="login.html">Log In/Sign Up</a></li>
 								</ul>
 							</nav>
-							<div class="phone_num ml-auto">
-								<div class="phone_num_inner" id="name-display">
-									<i class="fa fa-user"></i><span>User</span>
+							<button class="phone_num ml-auto">
+								<div class="phone_num_inner">
+									<i class="fa fa-user"></i><a href="login.html"></a><span id="name-display">Log-In</span>
 								</div>
-							</div>
+							</button>
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 						</div>
 					</div>
@@ -84,7 +83,15 @@
 						Member Login
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input">
+							<input class="input100" id="inputName" type="text"  name="email" placeholder="Username">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</span>
+					</div>
+
+					<div class="wrap-input100">
 						<input class="input100" id="inputEmail" type="text"  name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -102,16 +109,9 @@
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" id="buttonLogin">
-							Login
+							Login/Create Account
 						</button>
 					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" id="buttonCreate">
-							Create Account
-						</button>
-					</div>
-
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" id="buttonLogOut">
 							Log Out
@@ -136,6 +136,7 @@
 		})
 	</script>
 	<script src="assets/javascript/login.js"></script>
+	<script src="assets/javascript/app.js"></script>
 	
 	
 

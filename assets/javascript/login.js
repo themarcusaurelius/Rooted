@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function () {
 
     // Initialize Firebase
@@ -11,13 +10,64 @@ $(document).ready(function () {
         messagingSenderId: "95280005810"
     };
     firebase.initializeApp(config);
-=======
-(function ($) {
-    "use strict";
->>>>>>> 403cccfaf59ebaee60bbf22c7205d6f32393dc4e
+    
+    window.firebaseAuth = firebase.auth;
 
     ////////////////////////////////////////////////////////////////////////////////////
     var database = firebase.database();
+
+    var name = "";
+    var email = "";
+    var password = "";
+    
+    // Capture Button Click
+    $("#buttonLogin").on("click", function(event) {
+        event.preventDefault();
+
+        // Grabbed values from text boxes
+        name = $("#inputName").val().trim();
+        email = $("#inputEmail").val().trim();
+        password = $("#inputPassword").val().trim();
+
+        console.log(name);
+        console.log(email);
+        console.log(password);
+
+        // Code for handling the push
+        database.ref("/Users").push({
+            name: name,
+            email: email,
+            password: password,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        });
+});
+
+// Firebase watcher .on("child_added"
+database.ref("/Users").on("child_added", function(snapshot) {
+    // storing the snapshot.val() in a variable for convenience
+    var sv = snapshot.val();
+
+    // Console.loging the last user's data
+    console.log(sv.name);
+    console.log(sv.email);
+    console.log(sv.password);
+    
+    // Change the HTML to reflect
+    $("#name-display").text(sv.name);
+
+    // Handle the errors
+}, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  });
+
+
+$("#buttonLogOut").on("click", function(event) {
+        event.preventDefault();
+        $("#name-display").text("Log-In");
+});
+
+
+
 
     //elements acquired
     const inputEmail = document.getElementById('inputEmail');
