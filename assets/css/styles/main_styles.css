@@ -742,7 +742,7 @@ section
 .return-results {
     width: 900px;
     height: 400px;
-    overflow: auto;
+    overflow: scroll;
     border-radius: 4px;
     margin: auto;
     border: 10px solid linear-gradient(to right, #487fee, #1b8b53);
@@ -750,12 +750,14 @@ section
 }
 
 .final-row {
-	margin-top: 3%;
+	
 	display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+
 
 /*********************************
 8. Scroll Feature

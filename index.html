@@ -22,6 +22,36 @@
 </head>
  
 <body>
+    <script>
+            ///////////////Scroll Feature\\\\\\\\\\\\\\\\
+
+        window.smoothScroll = function (target) {
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop - 18;
+            } while (target = target.offsetParent);
+
+            scroll = function (c, a, b, i) {
+                i++;
+                if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function () {
+                    scroll(c, a, b, i);
+                }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }
+    
+    </script>
     <!-- Small Screen Menu Button-->
     <div class="menu trans_500">
             <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -63,7 +93,7 @@
                             </nav>
                             <div class="phone_num ml-auto">
                                 <div class="phone_num_inner">
-                                    <img src="image" id="name-display" alt=""><span>User Name</span>
+                                    <i class="fa fa-user"></i><span>User</span>
                                 </div>
                             </div>
                             
@@ -179,6 +209,8 @@
             </div>    
         </div>
 
+        <br><br><br><br><br><br><br><br><br><br><br>
+
         <div class="row" id="final-row">
             <div class="col-6">
                 <!-- Paste this script where you want the map to be shown -->
@@ -196,7 +228,7 @@
                         address: '300 W 6th St, Austin, TX 78701' , // full street address or venue name + city
                         checkin: '2019-04-22', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
                         maincolor: '487fee', // your brand color in hex (without the #)
-                        markerimage: "", // url of your logo or event image (in https)
+                        markerimage: "www.facebook.com", // url of your logo or event image (in https)
                         zoom: 25                    };
                 
                     // Leave this part intact
@@ -254,7 +286,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCh_URgHgmsx6M6uNR7BQ0J9udoszW9zIg"></script>
     <script src="assets/javascript/app.js"></script>
     <script src="assets/javascript/get.js"></script>
-    <script src="assets/javascript/contact.js"></script>
 
 </body>
 </html> 

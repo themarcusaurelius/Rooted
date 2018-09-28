@@ -13,8 +13,6 @@ $(document).ready(function () {
     ////////////////////////////////////////////////////////////////////////////////////
     var database = firebase.database();
    
-    
-
         $("#send").click(function () {
             let name= $("#name-input").val();
             let email= $("#email-input").val();
