@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function () {
 
     // Initialize Firebase
@@ -10,6 +11,10 @@ $(document).ready(function () {
         messagingSenderId: "95280005810"
     };
     firebase.initializeApp(config);
+=======
+(function ($) {
+    "use strict";
+>>>>>>> 403cccfaf59ebaee60bbf22c7205d6f32393dc4e
 
     ////////////////////////////////////////////////////////////////////////////////////
     var database = firebase.database();

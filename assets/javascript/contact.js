@@ -13,6 +13,11 @@ $(document).ready(function () {
     ////////////////////////////////////////////////////////////////////////////////////
     var database = firebase.database();
    
+<<<<<<< HEAD
+=======
+    $(document).ready(function () {
+
+>>>>>>> 403cccfaf59ebaee60bbf22c7205d6f32393dc4e
         $("#send").click(function () {
             let name= $("#name-input").val();
             let email= $("#email-input").val();
@@ -64,4 +69,8 @@ $(document).ready(function () {
         $("#message-input").val()
 
     }) ; 
+<<<<<<< HEAD
     
+=======
+    }) ; 
+>>>>>>> 403cccfaf59ebaee60bbf22c7205d6f32393dc4e

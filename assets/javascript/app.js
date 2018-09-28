@@ -369,7 +369,7 @@ $(document).ready(function () {
                 })
 
        
-    
+    });
 
 ///////////////////User Login\\\\\\\\\\\\\\\\\\\
    const inputEmail = document.getElementById('inputEmail');
@@ -426,5 +426,4 @@ $(document).ready(function () {
 
    console.log(user);
 
-});
 });
