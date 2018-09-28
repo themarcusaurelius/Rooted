@@ -192,7 +192,7 @@ $(document).ready(function () {
                 lat: 30.269091,
                 lng: -97.745817,
                 zoom: 14,
-                name: "Google"
+                name: "Facebook"
             },
             {
                 lat: 30.404769,
