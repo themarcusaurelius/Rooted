@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // Initialize Firebase
+   // Initialize Firebase
     var config = {
         apiKey: "AIzaSyDW7VVTo0QIJkHrYXQX_ywKUBHc44AfXGs",
         authDomain: "rooted-d62ff.firebaseapp.com",
@@ -10,6 +10,8 @@ $(document).ready(function () {
         messagingSenderId: "95280005810"
     };
     firebase.initializeApp(config);
+
+    window.firebaseAuth = firebase.auth;
 
     ////////////////////////////////////////////////////////////////////////////////////
     var database = firebase.database();
@@ -125,7 +127,7 @@ $(document).ready(function () {
 
             var mapOptions = {
                 center: myLatlng,
-                zoom: 15,
+                zoom: 17,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 draggable: true,
                 scrollwheel: true,
@@ -158,9 +160,8 @@ $(document).ready(function () {
                 }, 1400);
             });
         }
-        //on submit for company check to see if the user chooses a value that is equal to one of your markerData points, if so set a variable to hold the latitude and longitude for that specific marker
-
-
+        
+///////////////////////
         var map;
 
         var markerData = [{
@@ -367,39 +368,8 @@ $(document).ready(function () {
                     })  
                 })
 
-        ///////////////Scroll Feature\\\\\\\\\\\\\\\\
-
-        window.smoothScroll = function (target) {
-            var scrollContainer = target;
-            do { //find scroll container
-                scrollContainer = scrollContainer.parentNode;
-                if (!scrollContainer) return;
-                scrollContainer.scrollTop += 1;
-            } while (scrollContainer.scrollTop == 0);
-
-            var targetY = 0;
-            do { //find the top of target relatively to the container
-                if (target == scrollContainer) break;
-                targetY += target.offsetTop - 18;
-            } while (target = target.offsetParent);
-
-            scroll = function (c, a, b, i) {
-                i++;
-                if (i > 30) return;
-                c.scrollTop = a + (b - a) / 30 * i;
-                setTimeout(function () {
-                    scroll(c, a, b, i);
-                }, 20);
-            }
-            // start scrolling
-            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-        }
-
-
-
-    });
-
-
+       
+    
 
 ///////////////////User Login\\\\\\\\\\\\\\\\\\\
    const inputEmail = document.getElementById('inputEmail');
@@ -456,4 +426,5 @@ $(document).ready(function () {
 
    console.log(user);
 
+});
 });

@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles/responsive.css">
 
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
 
 </head>
  
@@ -75,9 +75,10 @@
         </header>
         
         <!-- Company Search -->
+        <div id="top"></div>
         <div class="home_search">
             <div class="container">
-                <div class="jumbotron">
+                <div class="jumbotron" >
                     <h1 class="display-4">Select Your Company</h1>
                     <br>
                     <p class="lead"></p>
@@ -144,19 +145,17 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <select class="search_form_select">
-                                                <option disabled selected>Check-In</option>
-                                                <option><input type="date"></option>
-                                            </select>
+                                            <div class="form-row show-inputbtns search_form_select">
+                                                <input required="" type="text" class="form-control" placeholder="Check-In" onfocus="(this.type='date')"/>
+                                            </div>
                                         </div>
                                         <div>
-                                            <select class="search_form_select">
-                                                <option disabled selected>Check-Out</option>
-                                                <option><input type="date"></option>
-                                            </select>
-                                        </div>
+                                            <div class="form-row show-inputbtns rightBtn search_form_select">
+                                                <input required="" type="text" class="form-control" placeholder="Check-Out" onfocus="(this.type='date')"/>
+                                            </div>
+                                        </div>  
                                     </div>
-                                    <button class="search_form_button ml-auto" id="second">search</button>
+                                    <button class="search_form_button company_search_button ml-auto" type="button" id="second" onclick="smoothScroll(document.getElementById('third'))">Search</button>
                                 </form>
                             </div>
                         </div>
@@ -166,7 +165,7 @@
         </div><!--End Of Home Search Div-->
             
         <!--Map-->
-        <div class="row row-results">
+        <div class="row">
             <!--Search Map-->
             <div class="contact_map col-12">
                 <!-- Google Map -->
@@ -180,13 +179,73 @@
             </div>    
         </div>
 
-        <!--Search Results-->
-        <div class="return-results col-12"></div>
-         
-    </div> <!--Super Container Div Ending-->
+        <div class="row" id="final-row">
+            <div class="col-6">
+                <!-- Paste this script where you want the map to be shown -->
+                <script id="stay22-script">
+                    document.addEventListener("DOMContentLoaded", function(e) {
+                    // 1. Edit widget size
+                    var settings22 = {
+                        width: '100%', // set the width in px or %
+                        height: '420px' // set the height in px or %
+                    };
+                
+                    // 2. Fill out your config here and the rest should work
+                    var s22obj = {
+                        aid: 'affiliateid', // your affiliate id for tracking
+                        address: '300 W 6th St, Austin, TX 78701' , // full street address or venue name + city
+                        checkin: '2019-04-22', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
+                        maincolor: '487fee', // your brand color in hex (without the #)
+                        markerimage: "", // url of your logo or event image (in https)
+                        zoom: 25                    };
+                
+                    // Leave this part intact
+                    var params22=''; for (var key in s22obj){if (params22){params22 +='&';}params22 +=key + '=' + encodeURIComponent(s22obj[key]);}var div22=document.getElementById('stay22-script'); div22.insertAdjacentHTML('afterend', '<iframe id="stay22-widget" width="' + settings22.width + '" height="' + settings22.height + '" src="' + 'https://www.stay22.com/embed/gm?' + params22 + '" frameborder="0"></iframe>');
+                    });
+                </script>
+            </div>
+            <div class="col-6">
+                <!--Search Results-->
+                <div class="return-results bg-light"></div>
+            </div>
+        </div>
+        <button class="search_form_button company_search_button ml-auto" type="button" id="third" onclick="smoothScroll(document.getElementById('top'))">Search</button>   
+    </div><!--Super Container Div Ending-->
 
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+    <script>
+            ///////////////Scroll Feature\\\\\\\\\\\\\\\\
+
+        window.smoothScroll = function (target) {
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop - 18;
+            } while (target = target.offsetParent);
+
+            scroll = function (c, a, b, i) {
+                i++;
+                if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function () {
+                    scroll(c, a, b, i);
+                }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }
+    
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="plugins/easing/easing.js"></script>
@@ -195,6 +254,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCh_URgHgmsx6M6uNR7BQ0J9udoszW9zIg"></script>
     <script src="assets/javascript/app.js"></script>
     <script src="assets/javascript/get.js"></script>
+    <script src="assets/javascript/contact.js"></script>
 
 </body>
 </html> 

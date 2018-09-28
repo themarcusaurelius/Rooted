@@ -1,57 +1,71 @@
+$(document).ready(function () {
 
-(function ($) {
-    "use strict";
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDW7VVTo0QIJkHrYXQX_ywKUBHc44AfXGs",
+        authDomain: "rooted-d62ff.firebaseapp.com",
+        databaseURL: "https://rooted-d62ff.firebaseio.com",
+        projectId: "rooted-d62ff",
+        storageBucket: "rooted-d62ff.appspot.com",
+        messagingSenderId: "95280005810"
+    };
+    firebase.initializeApp(config);
 
-    
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
+    ////////////////////////////////////////////////////////////////////////////////////
+    var database = firebase.database();
 
-    $('.validate-form').on('submit',function(){
-        var check = true;
+    //elements acquired
+    const inputEmail = document.getElementById('inputEmail');
+    const inputPassword = document.getElementById('inputPassword');
+    const buttonLogin = document.getElementById('buttonLogin');
+    const buttonCreate = document.getElementById('buttonCreate');
+    const buttonLogOut = document.getElementById('buttonLogOut');
 
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
+    //login event
 
-        return check;
+    buttonLogin.addEventListener('click', e => {
+        //get email and password
+        const email = inputEmail.value;
+        const password = inputPassword.value;
+        const authorize = firebase.auth();
+        //Sign in
+        const entry = authorize.signInWithEmailAndPassword(email, password);
+        entry.catch(e => console.log(e.message));
+
+    });
+
+    buttonCreate.addEventListener('click', e => {
+        //get email and password
+        const email = inputEmail.value;
+        const password = inputPassword.value;
+        const authorize = firebase.auth();
+        //Sign in
+        const entry = authorize.createUserWithEmailAndPassword(email, password);
+        entry.catch(e => console.log(e.message));
     });
 
 
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-        });
+    buttonLogOut.addEventListener('click', e => {
+        firebase.auth().signOut();
     });
 
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+            console.log(firebaseUser);
+            buttonLogOut.classList.remove('hide');
+              // User is signed in.
+
         }
+
         else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
+            console.log("not logged in");
+            buttonLogOut.classList.add('hide');
+              // User is not logged in.
         }
-    }
+    });
 
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
+    var user = firebase.auth().currentUser;
 
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-    
-    
-
-})(jQuery);
+    console.log(user);
+});
