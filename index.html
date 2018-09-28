@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>Rooted Search Page</title>
-    <h1>hi</h1>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +75,7 @@
         </header>
         
         <!-- Company Search -->
-        
+        <div id="top"></div>
         <div class="home_search">
             <div class="container">
                 <div class="jumbotron" >
@@ -181,7 +180,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button class="search_form_button ml-auto" id="second">search</button>
+                                    <button class="search_form_button company_search_button ml-auto" type="button" id="second" onclick="smoothScroll(document.getElementById('third'))">Search</button>
                                 </form>
                             </div>
                         </div>
@@ -208,7 +207,12 @@
         <!--Search Results-->
         <div class = "scrollContainer"></div>
         <div class="return-results col-12 bg-secondary"></div>
-         
+
+<br>
+
+<div class="third-button">
+<button class="search_form_button company_search_button ml-auto" type="button" id="third" onclick="smoothScroll(document.getElementById('top'))">Search</button>
+</div>        
     </div> <!--Super Container Div Ending-->
 
     <script>
