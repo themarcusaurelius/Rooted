@@ -52,7 +52,7 @@
                     <div class="col">
                         <div class="header_content d-flex flex-row align-items-center justify-content-start">
                             <div class="logo">
-                                <a href="#"><img src="" alt="">LOGO WILL GO HERE</a>
+                                <a href="index.html"><img src="http://i68.tinypic.com/13yiejr.png" alt="" id="logo"></a>
                             </div>
                             <nav class="main_nav">
                                 <ul>
@@ -64,7 +64,7 @@
                             </nav>
                             <div class="phone_num ml-auto">
                                 <div class="phone_num_inner">
-                                    <i class="fa fa-user"></i><span id="name-display">Log-In</span>
+                                    <i class="fa fa-user"></i><a href="login.html"></a><span id="name-display">Log-In</span>
                                 </div>
                             </div>
                             
@@ -202,7 +202,17 @@
                         checkin: '2019-04-22', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
                         maincolor: '487fee', // your brand color in hex (without the #)
                         markerimage: "www.google.com", // url of your logo or event image (in https)
-                        zoom: 24                    };
+                        zoom: 15,
+                        hidebrandlogo: true,
+                        hideshare: true,
+                        hidefooter: true,
+                        hidefilters: true,
+                        hidenavbar: true,
+                        hidenavbuttons: true,
+                        hidesupport: true,
+                        fontcolor: '32fa95',
+                        hotelsfontcolor: '32fa95',
+                      };
                 
                     // Leave this part intact
                     var params22=''; for (var key in s22obj){if (params22){params22 +='&';}params22 +=key + '=' + encodeURIComponent(s22obj[key]);}var div22=document.getElementById('stay22-script'); div22.insertAdjacentHTML('afterend', '<iframe id="stay22-widget" width="' + settings22.width + '" height="' + settings22.height + '" src="' + 'https://www.stay22.com/embed/gm?' + params22 + '" frameborder="0"></iframe>');

@@ -63,7 +63,7 @@ database.ref("/Users").on("child_added", function(snapshot) {
 
 $("#buttonLogOut").on("click", function(event) {
         event.preventDefault();
-        $("#name-display").text("Log-In");
+        $("#name-display").append("Log-In");
 });
 
 

@@ -192,7 +192,7 @@ $(document).ready(function () {
                 lat: 30.269091,
                 lng: -97.745817,
                 zoom: 14,
-                name: "Google"
+                name: "Facebook"
             },
             {
                 lat: 30.404769,
@@ -346,7 +346,7 @@ $(document).ready(function () {
 
         for (i = 0; i < company.length; i++) {
             if (companyAdd === company[i].name) {
-                $("#stay22-script.s22obj.address").text(companyAdd);
+                $("#stay22-script.s22obj.address").text(companyAdd.value);
 
             }
         }
