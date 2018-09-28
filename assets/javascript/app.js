@@ -323,6 +323,16 @@ $(document).ready(function () {
             location: ""}, 
             ]
             
+            var companyAdd = $('#stay22-script.s22obj.address').val();
+
+            for (i = 0; i < company.length; i++) {
+                if (companyAdd === company[i].name) {
+                    $("#stay22-script.s22obj.address").text(companyAdd);
+
+                }
+            }
+
+
             let search = "https://maps.googleapis.com/maps/api/geocode/json?address="+"500 W 2nd St, Austin, TX 78701"+"&key=AIzaSyB5HFzXQptYixSzoZ8BjUGLQfVPTnKTbhw";
             // function companyData(){
             //function getLatLng(){
@@ -368,7 +378,6 @@ $(document).ready(function () {
                     })  
                 })
 
-       
     });
 
 ///////////////////User Login\\\\\\\\\\\\\\\\\\\
