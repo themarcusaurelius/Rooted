@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<style>
+#map-canvas {
+
+    height:600px;
+    width: 800px
+}
+</style>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+
+<script>
+	var map;
+
+	var markerData= [
+        {lat: 30.401081 , lng: -97.719290 , zoom: 14 , name: "Amazon"},
+        {lat: 30.432487 , lng: -97.735995 , zoom: 14 , name: "Apple"},
+        {lat: 30.309885 , lng: -97.742205 , zoom: 14 , name: "Bumble"},
+        {lat: 30.488424 , lng: -97.670435 , zoom: 14 , name: "Dell"},
+        {lat: 30.269091 , lng: -97.745817 , zoom: 14 , name: "Google"},
+        {lat: 30.404769 , lng: -97.721534 , zoom: 14 , name: "Homeaway"},
+        {lat: 30.393951 , lng: -97.724021 , zoom: 14 , name: "IBM"},
+        {lat: 30.363058 , lng: -97.793808 , zoom: 14 , name: "Indeed"},
+        {lat: 30.262696 , lng: -97.793318 , zoom: 14 , name: "Intel"},
+	];
+	 
+	function initialize() {
+		 	map = new google.maps.Map(document.getElementById('map-canvas'), {
+				zoom: 3,
+				center: {lat: 10, lng: 10}
+			});
+			markerData.forEach(function(data) {
+				var newmarker= new google.maps.Marker({
+					map:map,
+					position:{lat:data.lat, lng:data.lng},
+					title: data.name
+				});
+				jQuery("#selectlocation").append('<option value="'+[data.lat, data.lng,data.zoom].join('|')+'">'+data.name+'</option>');
+			});
+
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+	jQuery(document).on('change','#selectlocation',function() {
+		var latlngzoom = jQuery(this).val().split('|');
+		var newzoom = 1*latlngzoom[2],
+		newlat = 1*latlngzoom[0],
+		newlng = 1*latlngzoom[1];
+		map.setZoom(newzoom);
+		map.setCenter({lat:newlat, lng:newlng});
+	});
+
+</script>
+</head>
+<body>
+  <div class="col-md-12 col-sm-12">
+  
+    <select id="selectlocation">
+        <option value="10|10|3">Original Map</option>
+    </select>
+ 
+  
+  </div>
+  <div class="col-md-12 col-sm-12" id="map-canvas"></div>
+
+</body>
+</html>
