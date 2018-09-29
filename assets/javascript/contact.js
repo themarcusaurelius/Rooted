@@ -12,46 +12,35 @@ $(document).ready(function () {
     
     ////////////////////////////////////////////////////////////////////////////////////
     var database = firebase.database();
+
+    var name = "";
+    var email = "";
+    var subject = "";
+    var message = "";
    
-    $(document).ready(function () {
-
-        $("#send").click(function () {
-            let name= $("#name-input").val();
-            let email= $("#email-input").val();
-            let subject= $("#subject-input").val();
-            let message= $("#message-input").val();
-
-            console.log("click");
-
-            let newContact = {
-            name: name= $("#name-input").val(),
-            email: email= $("#email-input").val(),
-            subject: subject= $("#subject-input").val(),
-            message: message= $("#message-input").val(),
-
-            };
+        $("#send").on("click", function(event) {
+            event.preventDefault();
+        
+             name= $("#name-input").val();
+             email= $("#email-input").val();
+             subject= $("#subject-input").val();
+             message= $("#message-input").val();
 
             console.log(name);
             console.log(email); 
             console.log(subject); 
             console.log(message); 
+        
+        
+            // Push to Firebase
+            database.ref("/Contact").push({
+                name: name, 
+                email: email, 
+                subject: subject,
+                message: message,
+                dateAdded: firebase.database.ServerValue.TIMESTAMP
+            })
         })
-        var name = $("#name-input").val()
-        var email = $("#email-input").val()
-        var subject = $("#subject-input").val()
-        var message = $("#message-input").val()
-
-        // message not saving to firebase, will console.log though 
-
-        // Push to Firebase
-        database.ref("/Contact").push({
-            name: name, 
-            email: email, 
-            subject: subject,
-            message: message,
-            dateAdded: firebase.database.ServerValue.TIMESTAMP
-        })
-
         // database.ref("/Contact").on("child_added", function(snapshot) {
         //     // storing the snapshot.val() in a variable for convenience
         //     var sv = snapshot.val();
@@ -60,10 +49,9 @@ $(document).ready(function () {
         //     console.log(sv.name);
         //     console.log(sv.wins);p
 
-        $("#name-input").val()
-        $("#email-input").val()
-        $("#subject-input").val()
-        $("#message-input").val()
+        //$("#name-input").val()
+       // $("#email-input").val()
+        //$("#subject-input").val()
+        //$("#message-input").val()
 
-    }) ; 
     }) ; 

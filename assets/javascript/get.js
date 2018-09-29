@@ -8,7 +8,7 @@ $(document).ready(function () {
       storageBucket: "rooted-d62ff.appspot.com",
       messagingSenderId: "95280005810"
   };
-  firebase.initializeApp(config);
+  
 
   ////////////////////////////////////////////////////////////////////////////////////
   var database = firebase.database();
@@ -41,7 +41,7 @@ $(document).ready(function () {
                   
                           .then(function(data){
                           console.log(data);
-                          document.addEventListener("DOMContentLoaded", function(e) {
+                          //document.addEventListener("DOMContentLoaded", function(e) {
                               // 1. Edit widget size
                               var settings22 = {
                                 width: '80%', // set the width in px or %
@@ -53,10 +53,10 @@ $(document).ready(function () {
                                 //aid: 'affiliateid', // your affiliate id for tracking
                                 lat: latitude ,
                                 lng: longitude ,// full street address or venue name + city
-                                // currency:USD,
+                                currency:USD,
 
                                 checkin: '2018-10-22', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
-                                // checkout:jargon,
+                                checkout:jargon,
                                 maincolor: '00549E', // your brand color in hex (without the #)
                                 markerimage: "https://www.stay22.com/logo.png" // url of your logo or event image (in https)
                               };
@@ -87,9 +87,6 @@ $(document).ready(function () {
                       })
                   })
       
-          $("#first").click(function () {
-            
-
 
 
 
@@ -97,32 +94,6 @@ $(document).ready(function () {
 
 
       
-          })
-      window.smoothScroll = function(target) {
-                  var scrollContainer = target;
-                  do { //find scroll container
-                      scrollContainer = scrollContainer.parentNode;
-                      if (!scrollContainer) return;
-                      scrollContainer.scrollTop += 1;
-                  } while (scrollContainer.scrollTop == 0);
           
-                  var targetY = 0;
-                  do { //find the top of target relatively to the container
-                      if (target == scrollContainer) break;
-                      targetY += target.offsetTop -  18;
-                  } while (target = target.offsetParent);
-          
-                  scroll = function(c, a, b, i) {
-                      i++; if (i > 30) return;
-                      c.scrollTop = a + (b - a) / 30 * i;
-                      setTimeout(function(){ scroll(c, a, b, i); }, 20);
-                  }
-                  // start scrolling
-                  scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-
-
-
-Collapse 
-
-                
-           
+     
+  })

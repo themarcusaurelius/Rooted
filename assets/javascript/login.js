@@ -1,56 +1,126 @@
-(function ($) {
-    "use strict";
+$(document).ready(function () {
 
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDW7VVTo0QIJkHrYXQX_ywKUBHc44AfXGs",
+        authDomain: "rooted-d62ff.firebaseapp.com",
+        databaseURL: "https://rooted-d62ff.firebaseio.com",
+        projectId: "rooted-d62ff",
+        storageBucket: "rooted-d62ff.appspot.com",
+        messagingSenderId: "95280005810"
+    };
     
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
+    
+    window.firebaseAuth = firebase.auth;
 
-    $('.validate-form').on('submit',function(){
-        var check = true;
+    ////////////////////////////////////////////////////////////////////////////////////
+    var database = firebase.database();
 
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
+    var name = "";
+    var email = "";
+    var password = "";
+    
+    // Capture Button Click
+    $("#buttonLogin").on("click", function(event) {
+        event.preventDefault();
 
-        return check;
-    });
+        // Grabbed values from text boxes
+        name = $("#inputName").val().trim();
+        email = $("#inputEmail").val().trim();
+        password = $("#inputPassword").val().trim();
 
+        console.log(name);
+        console.log(email);
+        console.log(password);
 
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
+        // Code for handling the push
+        database.ref("/Users").push({
+            name: name,
+            email: email,
+            password: password,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
+});
+
+// Firebase watcher .on("child_added"
+database.ref("/Users").on("child_added", function(snapshot) {
+    // storing the snapshot.val() in a variable for convenience
+    var sv = snapshot.val();
+
+    // Console.loging the last user's data
+    console.log(sv.name);
+    console.log(sv.email);
+    console.log(sv.password);
+    
+    // Change the HTML to reflect
+    $("#name-display").text(sv.name);
+
+    // Handle the errors
+}, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  });
+
+
+$("#buttonLogOut").on("click", function(event) {
+        event.preventDefault();
+        $("#name-display").append("Log-In");
+});
+
+
+
+
+    //elements acquired
+    const inputEmail = document.getElementById('inputEmail');
+    const inputPassword = document.getElementById('inputPassword');
+    const buttonLogin = document.getElementById('buttonLogin');
+    const buttonCreate = document.getElementById('buttonCreate');
+    const buttonLogOut = document.getElementById('buttonLogOut');
+
+    //login event
+
+    buttonLogin.addEventListener('click', e => {
+        //get email and password
+        const email = inputEmail.value;
+        const password = inputPassword.value;
+        const authorize = firebase.auth();
+        //Sign in
+        const entry = authorize.signInWithEmailAndPassword(email, password);
+        entry.catch(e => console.log(e.message));
+
     });
 
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
+    buttonCreate.addEventListener('click', e => {
+        //get email and password
+        const email = inputEmail.value;
+        const password = inputPassword.value;
+        const authorize = firebase.auth();
+        //Sign in
+        const entry = authorize.createUserWithEmailAndPassword(email, password);
+        entry.catch(e => console.log(e.message));
+    });
+
+
+    buttonLogOut.addEventListener('click', e => {
+        firebase.auth().signOut();
+    });
+
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+            console.log(firebaseUser);
+            buttonLogOut.classList.remove('hide');
+              // User is signed in.
+
         }
+
         else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
+            console.log("not logged in");
+            buttonLogOut.classList.add('hide');
+              // User is not logged in.
         }
-    }
+    });
 
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
+    var user = firebase.auth().currentUser;
 
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-    
-    
-
-})(jQuery);
+    console.log(user);
+});
