@@ -1,10 +1,19 @@
+ /* @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900');
+
+
 .jumbotron{
 	height: 500px; 
 	margin-left: auto; 
 	margin-right: auto; 
-}
+	background: grey;  
+} */
 
-.home_search_container
+/* .jumboText{
+	position: relative;
+	top: -50px; 
+} */
+
+/* .home_search_container
 {
 	position: absolute;
 	top: -350px;
@@ -44,3 +53,31 @@
     cursor: pointer;
 }
 
+.jumbotron2{
+	height: 500px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	background: lightgray;
+	position: relative; 
+	bottom: 250px; 
+	background: white; 
+
+}
+
+.home_search_container2
+{
+	position: absolute;
+	bottom: 550px;
+	left: 15px;
+	width: calc(100% - 30px);
+	height: 90px;
+	border-radius: 45px;
+	padding: 10px;
+	background: rgba(255,255,255,0.33);
+}
+
+.form2{
+	position: relative; 
+	top: 200px; 
+} */
+ 
