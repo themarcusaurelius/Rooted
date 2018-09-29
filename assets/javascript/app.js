@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 
         // Push to Firebase
-        database.ref("/Users/userStats/Company").push({
+        database.ref("/Users/userStats/userName/Company").push({
             company: selectedValue,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });

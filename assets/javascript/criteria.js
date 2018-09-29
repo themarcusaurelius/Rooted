@@ -41,7 +41,7 @@ $(document).ready(function () {
                 console.log(start);
                 console.log(end);
 
-                database.ref("/Users/userStats/Criteria").push({
+                database.ref("/Users/userStats/userName/Criteria").push({
                     price: price,
                     start: start,
                     end: end,

@@ -34,7 +34,7 @@ $(document).ready(function () {
         console.log(password);
 
         // Code for handling the push
-        database.ref("/Users/userStats").push({
+        database.ref("/Users/userStats/userName").push({
             name: name,
             email: email,
             password: password,
@@ -43,7 +43,7 @@ $(document).ready(function () {
 });
 
 // Firebase watcher .on("child_added"
-database.ref("/Users/userStats").on("child_added", function(snapshot) {
+database.ref("/Users/userStats/userName ").on(function(snapshot) {
     // storing the snapshot.val() in a variable for convenience
     var sv = snapshot.val();
 
