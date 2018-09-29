@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>Rooted Search Page</title>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Rooted Home Papge">
@@ -16,9 +15,7 @@
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles/responsive.css">
-
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-
 </head>
  
 <body>
@@ -43,7 +40,6 @@
             </div>
             <div class="menu_phone"><span>call us: </span>1-512-850-3002</div>
     </div>
-
     <div class="super_container"><!--Modifies all Containers-->  
         <!-- Header -->
         <header class="header">
@@ -52,7 +48,7 @@
                     <div class="col">
                         <div class="header_content d-flex flex-row align-items-center justify-content-start">
                             <div class="logo">
-                                <a href="#"><img src="" alt="">LOGO WILL GO HERE</a>
+                                <a href="index.html"><img src="http://i68.tinypic.com/13yiejr.png" alt="" id="logo"></a>
                             </div>
                             <nav class="main_nav">
                                 <ul>
@@ -64,7 +60,7 @@
                             </nav>
                             <div class="phone_num ml-auto">
                                 <div class="phone_num_inner">
-                                    <i class="fa fa-user"></i><span id="name-display">Log-In</span>
+                                    <i class="fa fa-user"></i><a href="login.html"></a><span id="name-display">Log-In</span>
                                 </div>
                             </div>
                             
@@ -91,19 +87,19 @@
                                 <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start" id="company-input">
                                     <div class="search_form_content d-flex flex-row align-items-start justfy-content-start flex-wrap">
                                         <div>
-                                            <select class="search_form_select1" id="selectedlocation">
-                                                <div class="company_search_box">
+                                            <select class="search_form_select1" >
+                                                <div class="company_search_box" >
                                                     <option disabled selected>Company</option>
-                                                    <option value="Amazon">Amazon</option>
-                                                    <option value="Apple">Apple</option>
-                                                    <option value="Bumble">Bumble</option>
-                                                    <option value="Dell">Dell</option>
-                                                    <option value="Facebook">Facebook</option>
-                                                    <option value="Google">Google</option>
-                                                    <option value="Home Away">Home Away</option>
-                                                    <option value="IBM">IBM</option>
-                                                    <option value="Indeed">Indeed</option>
-                                                    <option value="Intel">Intel</option>
+                                                    <option value="11501 Alterra Pkwy, Austin, TX 78758">Amazon</option>
+                                                    <option value="12545 Riata Vista Cir, Austin, TX 78727">Apple</option>
+                                                    <option value="1105 W 41st St, Austin, TX 78756">Bumble</option>
+                                                    <option value="319 E Parmer Ln, Austin, TX 78753">Dell</option>
+                                                    <option value="300 W 6th St, Austin, TX 78701">Facebook</option>
+                                                    <option value="500 W 2nd St, Austin, TX 78701">Google</option>
+                                                    <option value="1011 W 5th St #300, Austin, TX 78703">Home Away</option>
+                                                    <option value="Building 045, 11400 Burnet Rd, Austin, TX 78758">IBM</option>
+                                                    <option value="6433 Champion Grandview Way, Austin, TX 78750">Indeed</option>
+                                                    <option value="1300 S MoPac Expy, Austin, TX 78746">Intel</option>
                                                 </div>
                                             </select>
                                         </div>
@@ -116,9 +112,7 @@
                 </div>
             </div>
         </div><!--End of Company Search Div-->
-
         <br><br><br><br><br>
-
         <!--Home Search-->
         <div class="home_search">
             <div class="container">
@@ -134,26 +128,25 @@
                                 <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start" id="criteria-input">
                                     <div class="search_form_content d-flex flex-row align-items-start justfy-content-start flex-wrap">
                                         <div>
-                                            <select class="search_form_select">
+                                            <select class="search_form_select" id="price">
                                                 <option disabled selected>Max Price</option>
-                                                <option>$200</option>
-                                                <option>$300</option>
-                                                <option>$400</option>
-                                                <option>$500</option>
-                                                <option>$600</option>
-                                                <option>$700</option>
-                                                <option>$800+</option>
+                                                <option value="200">$200</option>
+                                                <option value ="300">$300</option>
+                                                <option value="400">$400</option>
+                                                <option value="500">$500</option>
+                                                <option value="600">$600</option>
+                                                <option value="700">$700</option>
+                                                <option value="800">$800+</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <div class="form-row show-inputbtns search_form_select">
-                                                <input required="" type="text" class="form-control" placeholder="Check-In" onfocus="(this.type='date')"/>
+                                            <div class="form-row show-inputbtns search_form_select" >
+                                                <input id="start" required="" type="text" class="form-control" placeholder="Check-In" onfocus="(this.type='date')"/>
                                             </div>
                                         </div>
                                         <div>
-
-                                            <div class="form-row show-inputbtns rightBtn search_form_select">
-                                                <input required="" type="text" class="form-control" placeholder="Check-Out" onfocus="(this.type='date')"/>
+                                            <div class="form-row show-inputbtns rightBtn search_form_select" >
+                                                <input id="end" required="" type="text" class="form-control" placeholder="Check-Out" onfocus="(this.type='date')"/>
                                             </div>
                                         </div>
                                     </div>
@@ -180,15 +173,12 @@
                 </div>
             </div>    
         </div>
-
-
         <br><br><br><br><br><br><br><br><br><br><br>
-
         <div class="row" id="final-row">
-            <div class="col-6">
+            <div class="col-">
                 <!-- Paste this script where you want the map to be shown -->
                 <script id="stay22-script">
-                    document.addEventListener("DOMContentLoaded", function(e) {
+                    /*document.addEventListener("DOMContentLoaded", function(e) {
                     // 1. Edit widget size
                     var settings22 = {
                         width: '600px', // set the width in px or %
@@ -202,11 +192,21 @@
                         checkin: '2019-04-22', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
                         maincolor: '487fee', // your brand color in hex (without the #)
                         markerimage: "www.google.com", // url of your logo or event image (in https)
-                        zoom: 24                    };
+                        zoom: 15,
+                        hidebrandlogo: true,
+                        hideshare: true,
+                        hidefooter: true,
+                        hidefilters: true,
+                        hidenavbar: true,
+                        hidenavbuttons: true,
+                        hidesupport: true,
+                        fontcolor: '32fa95',
+                        hotelsfontcolor: '32fa95',
+                      };
                 
                     // Leave this part intact
                     var params22=''; for (var key in s22obj){if (params22){params22 +='&';}params22 +=key + '=' + encodeURIComponent(s22obj[key]);}var div22=document.getElementById('stay22-script'); div22.insertAdjacentHTML('afterend', '<iframe id="stay22-widget" width="' + settings22.width + '" height="' + settings22.height + '" src="' + 'https://www.stay22.com/embed/gm?' + params22 + '" frameborder="0"></iframe>');
-                    });
+                    });*/
                 </script>
             </div>
             <div class="col-6">
@@ -216,10 +216,8 @@
         </div>
         <button class="search_form_button thirdBtn company_search_button ml-auto" type="button" id="third" onclick="smoothScroll(document.getElementById('top'))">Back to Top</button>   
     
-
         <script>
                 ///////////////Scroll Feature\\\\\\\\\\\\\\\\
-
             window.smoothScroll = function (target) {
                 var scrollContainer = target;
                 do { //find scroll container
@@ -227,13 +225,11 @@
                     if (!scrollContainer) return;
                     scrollContainer.scrollTop += 1;
                 } while (scrollContainer.scrollTop == 0);
-
                 var targetY = 0;
                 do { //find the top of target relatively to the container
                     if (target == scrollContainer) break;
                     targetY += target.offsetTop - 18;
                 } while (target = target.offsetParent);
-
                 scroll = function (c, a, b, i) {
                     i++;
                     if (i > 30) return;
@@ -248,20 +244,19 @@
         
         </script>
     </div><!--Super Container Div Ending-->
-
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="plugins/easing/easing.js"></script>
-	<script src="plugins/rangeslider.js-2.3.0/rangeslider.min.js"></script>
-	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="plugins/rangeslider.js-2.3.0/rangeslider.min.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCh_URgHgmsx6M6uNR7BQ0J9udoszW9zIg"></script>
     <script src="assets/javascript/app.js"></script>
-    <script src="assets/javascript/get.js"></script>
+   <!-- <script src="assets/javascript/get.js"></script>-->
     <script src="assets/javascript/contact.js"></script>
     <script src="assets/javascript/login.js"></script>
-
+    <script src="assets/javascript/criteria.js"></script>
 </body>
 </html> 
