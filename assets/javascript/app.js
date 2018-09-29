@@ -298,6 +298,7 @@ $(document).ready(function () {
             $("#selectlocation").append('<option value="' + [data.lat, data.lng, data.zoom].join('|') + '">' + data.name + '</option>');
 
         });
+       
 
         ///////////////Database Quieries\\\\\\\\\\\\
        let company = [{
